@@ -5,4 +5,5 @@ export 'src/SectorPerformances.dart';
 export 'src/TechnicalIndicators.dart';
 export 'src/CryptoCurrencies.dart';
 export 'src/ForeignExchange.dart';
+export 'src/TickerSearch.dart';
 export 'src/JSONObject.dart';
