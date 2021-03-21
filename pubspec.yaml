@@ -1,6 +1,6 @@
 name: alpha_vantage_package
 description: alpha vantage package api to get Stock Quotes.
-version: 1.0.0
+version: 2.0.0
 author: Basil Zuberi<basilzuberi@gmail.com>
 homepage: https://www.github.com/basilzuberi/alpha_vantage_package
 
