@@ -1,15 +1,16 @@
 import 'dart:async';
 
-import 'package:alpha_vantage_package/src/BaseAPI.dart';
-import 'package:alpha_vantage_package/src/JSONObject.dart';
+import 'BaseAPI.dart';
+import 'JSONObject.dart';
 
 class ForeignExchange extends BaseAPI {
-
   ForeignExchange(String key) : super(key);
 
-
-  Future<JSONObject> getCurrencyExchangeRate(String fromCurrency, String toCurrency) {
-    return this.getRequest(function: "CURRENCY_EXCHANGE_RATE", fromCurrency: fromCurrency, toCurrency: toCurrency );
-
+  Future<JSONObject> getCurrencyExchangeRate(
+      String fromCurrency, String toCurrency) {
+    return this.getRequest(
+        function: "CURRENCY_EXCHANGE_RATE",
+        fromCurrency: fromCurrency,
+        toCurrency: toCurrency);
   }
 }

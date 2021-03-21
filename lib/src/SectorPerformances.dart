@@ -1,11 +1,9 @@
-
 import 'dart:async';
 
-import 'package:alpha_vantage_package/src/BaseAPI.dart';
-import 'package:alpha_vantage_package/src/JSONObject.dart';
+import 'BaseAPI.dart';
+import 'JSONObject.dart';
 
 class SectorPerformances extends BaseAPI {
-
   SectorPerformances(String key) : super(key);
 
   Future<JSONObject> getSectorPerformances() {

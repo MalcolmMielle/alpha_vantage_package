@@ -1,37 +1,37 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:alpha_vantage_package/src/alpha_vantage_client.dart';
+import 'alpha_vantage_client.dart';
 import 'package:http/http.dart';
-import 'package:alpha_vantage_package/src/JSONObject.dart';
+import 'JSONObject.dart';
 
 class BaseAPI {
   var client = AlphaVantageClient.internal();
 
-  String _apiKey;
-  Map<String, String> queryParams;
+  String? _apiKey;
+  Map<String, String>? queryParams;
 
   BaseAPI(String key) {
     this._apiKey = key;
     this.queryParams = new Map();
   }
 
-  String getAPIKey() {
+  String? getAPIKey() {
     return this._apiKey;
   }
 
   Future<JSONObject> getRequest(
-      {String function,
-      String symbol,
-      String interval,
-      String outputsize,
-      String symbols,
-      String fromCurrency,
-      String toCurrency,
-      String market,
-      String timePeriod,
-      String seriesType,
-      String keywords}) async {
+      {String? function,
+      String? symbol,
+      String? interval,
+      String? outputsize,
+      String? symbols,
+      String? fromCurrency,
+      String? toCurrency,
+      String? market,
+      String? timePeriod,
+      String? seriesType,
+      String? keywords}) async {
     Response response = await this.client.get(
         function: function,
         symbol: symbol,

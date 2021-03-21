@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:alpha_vantage_package/src/BaseAPI.dart';
-import 'package:alpha_vantage_package/src/JSONObject.dart';
+import 'BaseAPI.dart';
+import 'JSONObject.dart';
 
 class SearchTicker extends BaseAPI {
   SearchTicker(String key) : super(key);

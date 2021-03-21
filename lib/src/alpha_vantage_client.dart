@@ -46,18 +46,18 @@ class AlphaVantageClient {
   }
 
   Future<Response> get(
-      {String function = "TIME_SERIES_INTRADAY",
-      String symbol,
-      String symbols,
-      String interval = "1min",
-      String outputsize,
-      String apiKey,
-      String fromCurrency,
-      String toCurrency,
-      String market,
-      String timePeriod,
-      String seriesType,
-      String keywords}) {
+      {String? function = "TIME_SERIES_INTRADAY",
+      String? symbol,
+      String? symbols,
+      String? interval = "1min",
+      String? outputsize,
+      String? apiKey,
+      String? fromCurrency,
+      String? toCurrency,
+      String? market,
+      String? timePeriod,
+      String? seriesType,
+      String? keywords}) {
     Map<String, String> queryParams = _addQueryParams(
         function: function,
         symbol: symbol,
@@ -79,7 +79,7 @@ class AlphaVantageClient {
         queryParameters: queryParams);
     String url = uriRequest.toString();
     print("Calling client with URL: " + url);
-    Future<Response> response = this._client.get(url);
+    Future<Response> response = this._client.get(uriRequest);
     response.then((Response response) {
       print("Reponse from server: " + response.body.toString());
     });
@@ -88,18 +88,18 @@ class AlphaVantageClient {
   }
 
   Map<String, String> _addQueryParams(
-      {String function = "TIME_SERIES_INTRADAY",
-      String symbol,
-      String symbols,
-      String interval = "1min",
-      String outputsize,
-      String apiKey,
-      String fromCurrency,
-      String toCurrency,
-      String market,
-      String timePeriod,
-      String seriesType,
-      String keywords}) {
+      {String? function = "TIME_SERIES_INTRADAY",
+      String? symbol,
+      String? symbols,
+      String? interval = "1min",
+      String? outputsize,
+      String? apiKey,
+      String? fromCurrency,
+      String? toCurrency,
+      String? market,
+      String? timePeriod,
+      String? seriesType,
+      String? keywords}) {
     Map<String, String> queryParams = new Map();
     _updateQueryMap(queryParams, this._FUNCTION, function);
     _updateQueryMap(queryParams, this._SYMBOL, symbol);
@@ -117,7 +117,7 @@ class AlphaVantageClient {
   }
 
   _updateQueryMap(
-      Map<String, String> currentHeaders, String param, String paramValue) {
+      Map<String, String> currentHeaders, String param, String? paramValue) {
     if (paramValue != null) {
       currentHeaders[param] = paramValue;
     }

@@ -1,24 +1,21 @@
 import 'dart:convert';
 
-
 class JSONObject {
-
-  Map<String, dynamic> jsonContents;
+  Map<String, dynamic> jsonContents = Map();
 
   JSONObject(String jsonString) {
     this.jsonContents = json.decode(jsonString);
   }
 
   dynamic _get(String key, Map<String, dynamic> json) {
-
-    if(json.containsKey(key)) {
+    if (json.containsKey(key)) {
       return json[key];
-    }else {
+    } else {
       Iterable<dynamic> values = json.values;
-      for(dynamic jsonValue in values) {
+      for (dynamic jsonValue in values) {
         try {
           return _get(key, jsonValue);
-        } catch(e) {}
+        } catch (e) {}
       }
     }
 
@@ -30,11 +27,10 @@ class JSONObject {
   }
 
   String getString(String key) {
-    return  _get(key, this.jsonContents);
+    return _get(key, this.jsonContents);
   }
 
   Map<String, dynamic> getJSONMap() {
     return this.jsonContents;
   }
-
 }
